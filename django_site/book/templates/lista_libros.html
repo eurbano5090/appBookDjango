@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+{% load bootstrap5 %}
+{% block content %}
+   <section class="container mt-5">
+       <div class="d-flex mb-1">
+           <h2 class="d-inline-flex">Lista libros</h2>
+           <a class="d-inline-flex btn btn-outline-dark ms-5" href="{% url 'crear_libro' %}">Crear Libro</a>&nbsp;
+       </div>
+        {% bootstrap_messages %}
+       {% if libros %}
+       <!--tabla con libros-->
+       <table class="table table-striped mx-auto my-5">
+       <thead>
+       <tr>
+           <th scope="col">Id</th>
+           <th scope="col">Titulo</th>
+           <th scope="col">Autor</th>
+           <th scope="col">Valoracion</th>
+           <th scope="col">Ver</th>
+           <th scope="col">Editar</th>
+           <th scope="col">Eliminar</th>
+       </tr>
+       </thead>
+       <tbody>
+       {% for libro in libros %}
+           <tr>
+            <td> {{ libro.id }}</td>
+            <td>{{ libro.titulo }}</td>
+            <td>{{ libro.autor }}</td>
+            <td>{{ libro.valoracion }}</td>
+                <td><a class="btn" href="{% url 'ver_libro' libro_id=libro.id %}" name="book" role="button"  data-bs-toggle="tooltip" data-bs-placement="top" title="Ver Libro">
+                    <i class="fa-regular fa-eye btn-outline-info" aria-hidden="true"></i></a>&nbsp;</td>
+             <td><a class="btn ms-2" href="{% url 'editar_libro' libro_id=libro.id %}" role="button"  data-bs-toggle="tooltip" data-bs-placement="top" title="Editar">
+                 <i class="fas fa-pencil-alt btn-outline-success" aria-hidden="true"></i></a>&nbsp;</td>
+               <td><a class="btn ms-2" href="{% url 'eliminar_libro' libro_id=libro.id %}" role="button"  data-bs-toggle="tooltip" data-bs-placement="top" title="Eliminar">
+                   <i class="fas fa-trash btn-outline-danger" aria-hidden="true"></i></a></td>
+
+        </tr>
+       {% empty %}
+          <tr>
+              <td colspan="4">
+                  No hay libros disponibles
+              </td>
+          </tr>
+
+       {% endfor %}
+       </tbody>
+       </table>
+       {% else %}
+       <!-- si no hay libros-->
+       <p>No hay libros disponibles para la busqueda</p>
+       {% endif %}
+
+   </section>
+
+{% endblock %}

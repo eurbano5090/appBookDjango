@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% load bootstrap5 %}
+
+{% block content %}
+ <section class="ver container mt-5">
+     <h2>Libro</h2>
+     {% bootstrap_messages %}
+       {% if book %}
+       <!--tabla con libros-->
+     <div class="card w-75 my-5">
+     <div class="card-body">
+     <h2 class="card-title">Titulo : {{ book.titulo }}</h2>
+      <h3>Autor : {{ book.autor }}</h3>
+      <p>Codigo : {{ book.id }}</p>
+      <p class="card-text">Valoracion : {{ book.valoracion }}</p>
+
+
+       {% else %}
+       <!-- si no hay libros-->
+       <p>No hay libros disponibles para la busqueda</p>
+       {% endif %}
+</div>
+</div>
+   </section>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% load bootstrap5 %}
+{% block content %}
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary" >
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'index' %}"><i class="fa-solid fa-book me-2"></i>Site Web Django</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'index' %}" >Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'lista_libros' %}">Libros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Acerca de</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contacto</a>
+        </li>
+         <li class="nav-item">
+
+                {% if user.is_authenticated %}
+				<a class="btn btn-warning me-2" href="{% url 'logout' %}">Salir</a>
+                {% else %}
+                <a class="btn btn-warning" href="{% url 'login' %}">Ingresar</a>&nbsp;
+				<a class="btn btn-warning" href="{% url 'registro' %}">Registrarse</a>
+                {% endif %}
+         </li>
+       </ul>
+       <form class="d-flex ms-5" method="GET" action="{% url 'buscar_libro' %}">
+          <input class="form-control ms-2" type="search" name="query" placeholder="Buscar Libro" aria-label="Search">
+           <button class="btn btn-outline-info ms-2" type="submit">Buscar</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+{% endblock %}

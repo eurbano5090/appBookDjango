@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+ <style>
+ span{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 0 12px;
+    color:#fff;
+    display:block;
+    line-height: 1.1;
+    padding: 0 13px;
+    position: relative;
+}
+ span::before{
+    background: linear-gradient(90deg,var(--start-color),var(--end-color));
+    content:var(--content);
+    position: absolute;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animated 9s infinite;
+    animation-delay: var(--delay);
+}
+@keyframes animated{
+    0%, 16.667%, 100%{
+        opacity: 1;
+    }
+    33.333%, 83.333%{
+        opacity: 0;
+    }
+}
+</style>
+<body>
+
+ <div class="row align-items-center" >
+        <div class="col-md-12 col-12 text-nosotros d-none d-sm-block">
+
+              <div class="container opacity-200 text-center py-5">
+                  <h1>Site Web Django Book</h1>
+                  <br>
+                <h3>
+                <span style='--content:"YO SOY ELISA URBANO";--start-color:#007CF0;--end-color:#00DFD8;--delay:0s;'>YO SOY ELISA URBANO</span></h3>
+                <hr class="hero-line opacity-200 mx-auto w-15">
+                <h3>
+                <span style='--content:"FULL STACK PYTHON DEVELOPER";--start-color:#7928ca;--end-color:#ff0080;--delay:3.33s;'>FULL STACK PYTHON DEVELOPER</span></h3>
+
+                <i class="fa-solid fa-globe fa-4x"></i>
+                <br>
+              <br>
+                <h3>
+
+                <span style='--content:"PYTHON|SQL|DJANGO|BOOTSTRAP";--start-color:#FF4D4D;--end-color:#F9CB28;--delay:6.66s;'>PYTHON|SQL|DJANGO|BOOTSTRAP</span>
+            </h3>
+
+
+            </div>
+          </div>
+            </div>
+
+
+
+</body>
+
+{% endblock %}

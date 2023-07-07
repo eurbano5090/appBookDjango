@@ -1,0 +1,53 @@
+{% load bootstrap5 %}
+{% block content %}
+<!-- Footer -->
+ <footer class="d-none d-md-block text-center text-lg-start bg-info text-muted ">
+ <!-- Section: Social media -->
+      <section class="d-flex justify-content-center justify-content-lg-between border-bottom">
+       <div class="container text-center text-md-start mt-2">
+ <!-- Grid row -->
+        <div class="row mt-3">
+ <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-2">
+ <!-- Content -->
+         <h6 class="text-uppercase fw-bold mb-4">
+         <i class="fas fa-gem me-3 text-grayish"></i>Descripción
+         </h6>
+       <p>Desarrollo de Sitio Web de Django.</p>
+        </div>
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+ <!-- Links -->
+       <h6 class="text-uppercase fw-bold mb-4">Productos</h6>
+       <p><a href="{% url 'lista_libros' %}" class="text-reset">Libros</a></p>
+      </div>
+
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+ <!-- Links -->
+      <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+          <a href="https://github.com/eurbano5090" target="_blank" ;="">
+       <i class="fa-brands fa-github fa-2x  mx-2"></i></a>
+       <a href="https://www.linkedin.com/in/enurbanomz" target="_blank" ;="">
+       <i class="fa-brands fa-linkedin fa-2x  mx-2"></i></a>
+       <a href="https://www.facebook.com/elisa.n.meza" target="_blank" ;="">
+       <i class="fa-brands fa-facebook-square fa-2x mx-2"></i></a>
+       <a href="mailto:enurbanom@outlook.com" target="_blank">
+        <i class="fa-solid fa-envelope fa-2x mx-1"></i> </a>
+     <!--       <h3> <a href="https://linkedin.com/in/enurbanomz" target="blank" height="40"> &#127760;</a> &#9742;<a href="mailto:enurbanom@outlook.com " target="blank">&#9993;</h3><p><i class="fas fa-envelope me-3 text-grayish"></i>info@example.com</p>
+   <p><i class="fas fa-phone me-3 text-grayish"></i> + 01 234 567 88</p><p><i class="fas fa-print me-3 text-grayish"></i> + 01 234 567 89</p>-->
+     </div>
+ <!-- Grid column -->
+     </div>
+ <!-- Grid row -->
+     </div>
+     </section>
+ <!-- Section: Links -->
+
+ <!-- Copyright -->
+      <div class="text-center p-4" style="background-color: rgba(0, 0, 0,0.025);">© 2022 Copyright:
+      <a class="text-reset fw-bold" href="http://localhost:8000">SiteWebDjango.com</a>
+      </div>
+ <!-- Copyright -->
+     </footer>
+ <!-- Footer -->
+{% endblock %}
